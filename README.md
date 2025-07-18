@@ -36,3 +36,25 @@ dd Command	Low-level extraction of partition data
 apfs-fuse	Attempted mounting of APFS file system
 Permissions Management	Used sudo to work around access limitations
 System Error Handling	Handled disk space issues (ENOSPC) logically
+
+PART2 (5-11)
+1. Navigating to Jake’s user data
+sudo su
+cd /home/ubuntu/mac/root/Users/jake
+ls -lt
+2. Analyzing the PDF instructions
+Viewing PDF content using cat and searching for URLs with strings | grep http
+
+3. Determining the last connected Wi-Fi network
+Inspecting the com.apple.wifi.known-networks.plist file located in Library/Preferences
+
+4. Searching for installed applications info
+Finding and reading the InstallHistory.plist file, which contains installation history
+
+5. Extracting MeetMeLive app installation date
+
+sudo strings /home/ubuntu/mac/root/Library/Receipts/InstallHistory.plist | grep -E 'date|MeetMeLive' -A 5
+Results
+Wi-Fi network Jake connected to: Jake M. iPhone
+
+MeetMeLive application installation date: 2025-04-30 08:54:20
